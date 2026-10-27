@@ -1,0 +1,419 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #f5f6fa;
+    --texto: #202536;
+    --suave: #687083;
+    --borda: #d9deea;
+    --primaria: #465fc7;
+    --verde: #328456;
+    --amarelo: #b78115;
+    --cinza: #737b8a;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px 14px;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+    outline: 3px solid #91a4ff;
+    outline-offset: 3px;
+}
+
+button:disabled,
+input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.app {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 24px;
+    background: white;
+    border: 1px solid #e6e8ef;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px #2025360c;
+}
+
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eceef3;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.marca-icone {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 12px;
+    background: var(--primaria);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sobretitulo {
+    margin: 0 0 2px;
+    color: var(--suave);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.icone-botao,
+.fechar {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    background: white;
+    color: var(--texto);
+    font-size: 23px;
+}
+
+.introducao {
+    padding: 22px 0 18px;
+    text-align: center;
+}
+
+.data {
+    margin-bottom: 8px;
+    color: var(--suave);
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.introducao h2 {
+    margin: 0 0 8px;
+    font-size: 25px;
+}
+
+.introducao > p:last-child {
+    color: var(--suave);
+    font-size: 14px;
+}
+
+.tema {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    border: 1px solid #e5e8f3;
+    border-radius: 14px;
+    background: #f8f9ff;
+}
+
+.tema > span:first-child {
+    font-size: 26px;
+}
+
+.tema > div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.tema-legenda {
+    color: var(--suave);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.tamanho {
+    padding: 5px 8px;
+    border-radius: 7px;
+    background: #eceffd;
+    color: #354ba9;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.regras {
+    margin: 15px 0 18px;
+    padding: 12px 14px;
+    border: 1px solid #eceef3;
+    border-radius: 12px;
+    color: var(--suave);
+    font-size: 13px;
+}
+
+.regras summary {
+    color: var(--texto);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.regras p {
+    line-height: 1.5;
+}
+
+.exemplo-regra {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 7px 0;
+}
+
+.celula {
+    display: inline-grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.tabuleiro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    margin: 20px 0;
+}
+
+.linha {
+    display: flex;
+    gap: 7px;
+}
+
+.letra {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--borda);
+    border-radius: 8px;
+    background: white;
+    color: var(--texto);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.correta {
+    border-color: var(--verde);
+    background: var(--verde);
+    color: white;
+}
+
+.presente {
+    border-color: var(--amarelo);
+    background: var(--amarelo);
+    color: white;
+}
+
+.errada {
+    border-color: var(--cinza);
+    background: var(--cinza);
+    color: white;
+}
+
+.mensagem {
+    min-height: 22px;
+    margin: 14px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.controles label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.entrada-linha {
+    display: flex;
+    gap: 9px;
+}
+
+input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button[type="submit"],
+#compartilhar {
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--primaria);
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+button[type="submit"]:hover,
+#compartilhar:hover {
+    background: #354ba9;
+}
+
+.resultado,
+.estatisticas {
+    margin-top: 20px;
+    padding: 18px;
+    border: 1px solid #e5e8f3;
+    border-radius: 14px;
+    background: #fafbff;
+}
+
+.resultado h2,
+.estatisticas h2 {
+    margin-top: 0;
+    font-size: 19px;
+}
+
+.resultado p {
+    color: var(--suave);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.acoes-resultado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.acoes-resultado button {
+    flex: 1;
+    min-width: 140px;
+    padding: 11px;
+    border-radius: 9px;
+    font-weight: bold;
+}
+
+.botao-claro {
+    border: 1px solid var(--borda);
+    background: white;
+    color: var(--texto);
+}
+
+.proximo-desafio {
+    margin-bottom: 0;
+    font-size: 12px !important;
+}
+
+.estatisticas-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.fechar {
+    width: 34px;
+    height: 34px;
+}
+
+.numeros-estatisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.numeros-estatisticas div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 5px;
+    border-radius: 10px;
+    background: white;
+    text-align: center;
+}
+
+.numeros-estatisticas strong {
+    font-size: 23px;
+}
+
+.numeros-estatisticas span {
+    color: var(--suave);
+    font-size: 11px;
+}
+
+footer {
+    margin-top: 22px;
+    color: #858b9b;
+    font-size: 11px;
+    text-align: center;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 390px) {
+    .app {
+        padding: 18px 13px;
+    }
+
+    .letra {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
+    .linha {
+        gap: 5px;
+    }
+
+    .tabuleiro {
+        gap: 5px;
+    }
+
+    .entrada-linha {
+        flex-direction: column;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}

@@ -1,0 +1,111 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palavra do Dia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <header class="topo">
+            <div class="marca">
+                <span class="marca-icone">P</span>
+                <div>
+                    <p class="sobretitulo">DESAFIO DIÁRIO</p>
+                    <h1>Palavra do Dia</h1>
+                </div>
+            </div>
+
+            <button id="abrirEstatisticas" class="icone-botao"
+                type="button" aria-label="Ver estatísticas">▥</button>
+        </header>
+
+        <section class="introducao">
+            <p class="data" id="dataAtual"></p>
+            <h2>Qual é a palavra de hoje?</h2>
+            <p>Descubra a palavra em até seis tentativas!</p>
+        </section>
+
+        <section class="tema">
+            <span id="iconeTema">🧩</span>
+            <div>
+                <span class="tema-legenda">TEMA DE HOJE</span>
+                <strong id="categoria">Carregando...</strong>
+            </div>
+            <span class="tamanho">5 letras</span>
+        </section>
+
+        <details class="regras">
+            <summary>Como jogar</summary>
+            <p>Digite uma palavra de cinco letras e veja as cores:</p>
+            <div class="exemplo-regra">
+                <span class="celula correta">A</span>
+                <span>Verde: letra no lugar certo.</span>
+            </div>
+            <div class="exemplo-regra">
+                <span class="celula presente">R</span>
+                <span>Amarelo: letra em outro lugar.</span>
+            </div>
+            <div class="exemplo-regra">
+                <span class="celula errada">M</span>
+                <span>Cinza: letra que não está na palavra.</span>
+            </div>
+        </details>
+
+        <section id="tabuleiro" class="tabuleiro"
+            aria-label="Tabuleiro do jogo"></section>
+
+        <p id="mensagem" class="mensagem" role="status"
+            aria-live="polite">Carregando o jogo...</p>
+
+        <form id="formulario" class="controles">
+            <label for="entrada">Sua tentativa</label>
+            <div class="entrada-linha">
+                <input id="entrada" type="text" maxlength="20"
+                    placeholder="Digite uma palavra" autocomplete="off"
+                    autocapitalize="characters" spellcheck="false" required>
+                <button id="enviar" type="submit">Enviar</button>
+            </div>
+        </form>
+
+        <section id="resultado" class="resultado" hidden>
+            <h2 id="tituloResultado">Resultado</h2>
+            <p id="textoResultado"></p>
+            <div class="acoes-resultado">
+                <button id="compartilhar" type="button">
+                    Compartilhar resultado
+                </button>
+                <button id="copiar" class="botao-claro" type="button">
+                    Copiar resultado
+                </button>
+            </div>
+            <p id="proximoDesafio" class="proximo-desafio"></p>
+        </section>
+
+        <section id="painelEstatisticas" class="estatisticas"
+            hidden aria-labelledby="tituloEstatisticas">
+            <div class="estatisticas-cabecalho">
+                <h2 id="tituloEstatisticas">Suas estatísticas</h2>
+                <button id="fecharEstatisticas" class="fechar"
+                    type="button" aria-label="Fechar estatísticas">×</button>
+            </div>
+
+            <div class="numeros-estatisticas">
+                <div><strong id="totalJogos">0</strong><span>Partidas</span></div>
+                <div><strong id="vitorias">0</strong><span>Vitórias</span></div>
+                <div><strong id="percentualVitorias">0%</strong><span>Acertos</span></div>
+                <div><strong id="sequenciaAtual">0</strong><span>Sequência atual</span></div>
+                <div><strong id="melhorSequencia">0</strong><span>Melhor sequência</span></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Um desafio novo a cada dia. Sem cadastro e sem anúncios.</p>
+        </footer>
+    </main>
+</body>
+</html>
